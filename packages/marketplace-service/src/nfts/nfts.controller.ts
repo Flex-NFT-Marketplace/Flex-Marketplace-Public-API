@@ -27,6 +27,7 @@ import {
   UserDto,
   ListHoldersDto,
   ListBalancesDto,
+  BaseResult,
 )
 export class NftController {
   constructor(private readonly nftsService: NftService) {}
