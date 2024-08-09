@@ -1,11 +1,5 @@
-import { BaseQueryParams } from '@app/shared/types/base.queryparams';
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsHexadecimal,
-  IsOptional,
-  IsNotEmpty,
-  IsString,
-} from 'class-validator';
+import { IsHexadecimal, IsNotEmpty, IsString } from 'class-validator';
 
 export class NftFilterQueryParams {
   @ApiProperty({ type: String, required: true })
