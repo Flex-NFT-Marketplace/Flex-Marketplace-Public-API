@@ -5,6 +5,8 @@ import { AppLoggerMiddleware } from '@app/shared/middleware/app-logger.middlewar
 import { NftModule } from './nfts/nfts.module';
 import { NftCollectionsModule } from './nft-collections/nftCollections.module';
 import { HistoryModule } from './activity/activity.module';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -12,9 +14,20 @@ import { HistoryModule } from './activity/activity.module';
     NftModule,
     HistoryModule,
     NftCollectionsModule,
+    ThrottlerModule.forRoot([
+      {
+        ttl: 1000, // 1s
+        limit: 5,
+      },
+    ]),
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer): void {
