@@ -41,4 +41,4 @@ The Flex Marketplace Public API is built using the following technologies:
 * **RESTful API**: The API is designed following RESTful principles, providing predictable and resource-oriented endpoints.
 
 ## License
-Flex Marketplace Public API is open-source software licensed under the [MIT](https://github.com/Flex-NFT-Marketplace/Flex-Marketplace-Public-API)
+Flex Marketplace Public API is open-source software licensed under the [MIT](https://github.com/Flex-NFT-Marketplace/Flex-Marketplace-Public-API/blob/main/LICENCE)
